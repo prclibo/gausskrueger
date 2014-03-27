@@ -7,3 +7,6 @@ phi = isom2geoc(omega, e);
 a = 6378245;
 z = meridianarclen(phi, e, a);
 fprintf('%.5f %.5f\n', real(z), imag(z));
+
+[x, y] = gausskrueger(B, 2 * pi / 180, e, a);
+fprintf('%.5f %.5f\n', x, y);
