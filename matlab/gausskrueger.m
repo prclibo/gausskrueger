@@ -1,9 +1,14 @@
 % Gauss-Krueger projection
-% lat - latitude for a point
+% lat - latitudes for points (Nx1)
 % dlon - different of longtitude according to the reference longtitude
+%        (Nx1)
 % e - eccentricity of the earth ellipsoid
 % a - long axis of the earch ellipsoid
 function [x, y] = gausskrueger(lat, dlon, e, a)
+
+assert(size(lat, 2) == 1);
+assert(size(dlon, 2) == 1);
+
 
 B = lat;
 q = geoc2isom(B, e);
